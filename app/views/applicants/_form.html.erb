@@ -1,0 +1,23 @@
+
+<div class= "application_form">
+
+	<%= form_for(@applicant) do |f| %>
+
+	  <%= render 'formStep1' %>
+
+	  <%= render 'formStep2' %>
+
+
+
+
+
+	  <br><br>
+	  <p>
+	  	<%= f.submit "Next", class:"btn btn-success" %>
+	  </p>
+
+ 	<% end %> 
+</div>
+
+
+

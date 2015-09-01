@@ -1,0 +1,11 @@
+<%= form_for(@applicant) do |f| %>
+<p>
+	<%= f.label :position, 'Applying for' %><br>
+	<%= f.select :position, ['Online Researcher', 'Business Developer','Web Developer'], class: "form-control" %> 
+</p>
+
+<p>
+	<%= f.label :availability %>
+	<%= f.select :availability,["Full-Time", "Part-Time"], class:"form-control" %>
+</p>
+<% end %>

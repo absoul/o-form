@@ -1,23 +1,78 @@
+<%= render'shared/navbar'%>
+
 <div class="container">
 
 	<h1> 
 		<span class="glyphicon glyphicon-user" aria-hidden="true"></span> 
-		Application    
+			<%= @applicant.name%>  
+		<small> | 
+			<small> 
+				<strong>
+					<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 
+					<%= @applicant.location %> 
+				</strong>	
+		</small> 
+	</small>  
 	</h1>
-	<br><br>
+		<hr>
+		<br>
 
-	<fieldset>
-		<p>
-			<h2><%= @applicant.name %></h2>
-		</p>
+	<div class="row">
+<!--This is the first box to the left -->
+	  <div class="col-md-4">
+	  	<div class="profilebox1"> 
+	  		<!--Box content here -->
+	  		<h4>General Information</h4>	
+	  			<p>
+	  				<strong> Application status: </strong> <%= @applicant.status %>
+	  			</p>
 
-		<p>
-			<h2><%= @applicant.gender %></h2>
-		</p>
+	  			<p>
+	  				<strong> Application date: </strong> <%= distance_of_time_in_words(Time.now - @applicant.created_at) %> ago
+	  			</p>
 
-		<p>
-			<h2><%= @applicant.name %></h2>
-		</p>
-	</fieldset>
+	  			<p>
+	  				<strong> Position: </strong> <%= @applicant.position %>
+	  			</p>
+	  		
+	  	</div>	
+	</div>
+<!--This is the first box to the right -->
+  	<div class="col-md-4">
+  		<div class="profilebox2">
+  		<!--Box content here -->
+  			<h4> Contact Information</h4>	
+
+  			<p>
+  				<strong> Email: </strong> <%= @applicant.email %>
+  			</p>
+
+  			<p>
+  				<strong> Skype: </strong> <%= @applicant.skype %>
+  			</p>
+		</div>
+  	</div>
+</div>
+<div class="col-md-4">
+  	<div class="profilebox2">
+  	</div>
+</div> 
+<hr>
+
+    <div> 
+    		<h3>
+    			About
+    		</h3> 
+    		<q id="quote"> 
+    			<big><%= @applicant.about %></big> 
+    		</q>
+    	</div>
+	</div>
+
+	<hr>
+
+   
+    	</div>
+	</div>
 
 </div>

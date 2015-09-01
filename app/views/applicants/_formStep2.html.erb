@@ -1,0 +1,37 @@
+<%= form_for(@applicant) do |f| %>
+
+<p>
+		<%= f.label :name, 'Full Name' %>
+		<%= f.text_field :name, autofocus:true, class:"form-control" %>
+	  </p>
+
+	  <p>
+		<%= f.label :location %>
+		<%= f.text_field :location, class:"form-control" %>
+	  </p>
+
+	  <p>
+		<%= f.label :gender %>
+		<%= f.select :gender,["Male", "Female"], class:"form-control" %>
+	  </p>
+
+	  <p>
+		<%= f.label :email %>
+		<%= f.email_field :email, class:"form-control" %>
+	  </p>
+
+	  <p>
+		<%= f.label :skype %>
+		<%= f.text_field :skype, class:"form-control" %>
+	  </p>
+
+	  <p>
+	  	<%= f.label :resume_file, 'Resume' %>
+	  	<%= f.file_field :resume_file, id:"exampleInputFile" %>
+	  </p>
+
+	  <p>
+		<%= f.label :about, "Tell us a bit about you." %>
+		<%= f.text_area :about, class:"form-control" %>
+	  </p>
+<% end %>
